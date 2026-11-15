@@ -1,6 +1,7 @@
 import json, threading,  tls_client
 from core.modules.logging import *
 from core.modules.social_media.extra_attacks.github import github
+from core.modules.social_media.extra_attacks.minecraft import minecraft
 
 class Online:
     def __init__(self, username):
@@ -14,7 +15,8 @@ class Online:
         self.session = tls_client.Session()
 
         self.extra_info = {
-            "GitHub" : github
+            "GitHub" : github,
+            "Minecraft" : minecraft
         }
 
     def check_site(self, url, type, code, site):
