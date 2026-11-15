@@ -1,8 +1,7 @@
-import socket, json, tls_client
+import socket, whois, tls_client
 from core.modules.networking.port_scan import scan
 from core.modules.networking.attacks import ftp_attack
 from core.modules.logging import *
-from core.modules.general import flatten_results
 
 class Networking:
     def __init__(self, host):
@@ -39,11 +38,29 @@ class Networking:
 
         self.report["ip_lookup"] = data
 
+    def whois_(self):
+        lookup = whois.whois(self.report["basic"]["domain"])
+
+        self.report["whois"] = {
+            "registrar": lookup.registrar,
+            "creation_date": lookup.creation_date.strftime("%Y-%m-%d %H:%M:%S") if type(lookup.creation_date) == datetime else lookup.creation_date[0].strftime("%Y-%m-%d %H:%M:%S"),
+            "expiration_date": lookup.expiration_date.strftime("%Y-%m-%d %H:%M:%S") if type(lookup.expiration_date) == datetime else lookup.expiration_date[0].strftime("%Y-%m-%d %H:%M:%S"),
+            "updated_date" : lookup.updated_date.strftime("%Y-%m-%d %H:%M:%S") if type(lookup.updated_date) == datetime else lookup.updated_date[0].strftime("%Y-%m-%d %H:%M:%S"),
+            "name_servers": lookup.name_servers
+        }
+
+
     def run(self):
         print()
         info("Looking up IP...")
         self.ip_lookup()
         success("Completed IP lookup!")
+
+        print()
+
+        info("Searching whois records...")
+        self.whois_()
+        success("Whois records recovered!")
 
         print()
 
