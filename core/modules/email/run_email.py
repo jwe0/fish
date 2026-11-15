@@ -38,11 +38,23 @@ class Email:
         lookup = whois.whois(self.host)
 
         self.report["whois"] = {
-            "registrar": lookup.registrar,
-            "creation_date": lookup.creation_date[0].strftime("%Y-%m-%d %H:%M:%S"),
-            "expiration_date": lookup.expiration_date[0].strftime("%Y-%m-%d %H:%M:%S"),
-            "updated_date" : lookup.updated_date.strftime("%Y-%m-%d %H:%M:%S") if type(lookup.updated_date) == datetime else lookup.updated_date[0].strftime("%Y-%m-%d %H:%M:%S"),
-            "name_servers": lookup.name_servers
+            "basic" : {
+                "registrar": lookup.registrar,
+                "creation_date": lookup.creation_date.strftime("%Y-%m-%d %H:%M:%S") if type(lookup.creation_date) == datetime else lookup.creation_date[0].strftime("%Y-%m-%d %H:%M:%S"),
+                "expiration_date": lookup.expiration_date.strftime("%Y-%m-%d %H:%M:%S") if type(lookup.expiration_date) == datetime else lookup.expiration_date[0].strftime("%Y-%m-%d %H:%M:%S"),
+                "updated_date" : lookup.updated_date.strftime("%Y-%m-%d %H:%M:%S") if type(lookup.updated_date) == datetime else lookup.updated_date[0].strftime("%Y-%m-%d %H:%M:%S"),
+                "name_servers": lookup.name_servers
+
+            },
+            "registrant": {
+                "name": lookup.name,
+                "organization": lookup.org,
+                "email": lookup.emails,
+                "country": lookup.country,
+                "state": lookup.state,
+                "city": lookup.city,
+            },
+
         }
   
 
