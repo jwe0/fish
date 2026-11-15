@@ -1,0 +1,104 @@
+______   __     ______     __  __       
+/\  ___\ /\ \   /\  ___\   /\ \_\ \      
+\ \  __\ \ \ \  \ \___  \  \ \  __ \     
+ \ \_\    \ \_\  \/\_____\  \ \_\ \_\    
+  \/_/     \/_/   \/_____/   \/_/\/_/
+
+[*] Lookup results
+
+├ [B] Basic
+│        ├ [username]  | [USERNAME]
+│        ├ [host]      | [DOMAIN]
+│        └
+├ [H] Host
+│        ├ [hostname]  | [DOMAIN]
+│        ├ [aliases]   | [HOST ALIASES]
+│        ├ [addreses]  | [IP ADDRESS LIST]
+│        └
+├ [W] Whois
+│        ├ basic
+│        └───┐
+│            ├ [registrar]       | [DOMAIN REGISTRAR]
+│            ├ [creation_date]   | [DOMAIN CREATION DATE]
+│            ├ [expiration_date] | [DOMAIN EXPIRATION DATE]
+│            ├ [updated_date]    | [DOMAIN UPDATED DATE]
+│            ├ [name_servers]    | [DNS NAME SERVERS]
+│            └
+│        ├ registrant
+│        └───┐
+│            ├ [name]         | [REGISTRANT NAME]
+│            ├ [organization] | [REGISTRANT ORGANISATION]
+│            ├ [email]        | [REGISTRANT EMAIL]
+│            ├ [country]      | [COUNTRY CODE]
+│            ├ [state]        | [STATE CODE]
+│            ├ [city]         | [REGISTRANT CITY]
+│            └
+├ [U] Username
+│        ├ GitHub
+│        └───┐
+│            ├ [site]       | GitHub
+│            ├ [url]        | [GITHUB PROFILE URL]
+│            ├ [check_type] | status
+│            ├ [expected]   | 200
+│            ├ [recieved]   | 200
+│            └───┐
+│                ├ GitHub
+│                └───┐
+│                    ├ [fullname]     | [FULL NAME]
+│                    ├ [username]     | [GITHUB USERNAME]
+│                    ├ [homeLocation] | [IP / LOCATION]
+│                    ├ [localTime]    | [LOCAL TIME]
+│                    ├ [url]          | [PERSONAL WEBSITE URL]
+│                    ├ [social]       | [SOCIAL PROFILE]
+│                    └
+│        ├ Spotify
+│        └───┐
+│            ├ [site]       | Spotify
+│            ├ [url]        | [SPOTIFY PROFILE URL]
+│            ├ [check_type] | status
+│            ├ [expected]   | 200
+│            ├ [recieved]   | 200
+│            └
+│        ├ Dev.to
+│        └───┐
+│            ├ [site]       | Dev.to
+│            ├ [url]        | [DEV.TO PROFILE URL]
+│            ├ [check_type] | status
+│            ├ [expected]   | 200
+│            ├ [recieved]   | 200
+│            └
+│        ├ Minecraft
+│        └───┐
+│            ├ [site]       | Minecraft
+│            ├ [url]        | [MOJANG API URL]
+│            ├ [check_type] | status
+│            ├ [expected]   | 200
+│            ├ [recieved]   | 200
+│            └───┐
+│                ├ Minecraft
+│                └───┐
+│                    ├ [name]         | [MINECRAFT USERNAME]
+│                    ├ [uuid]         | [PLAYER UUID]
+│                    ├ [timestamp]    | [PROFILE TIMESTAMP]
+│                    ├ [profileId]    | [PLAYER UUID]
+│                    ├ [profileName]  | [MINECRAFT USERNAME]
+│                    ├ [skin]         | [MINECRAFT SKIN URL]
+│                    └
+│        ├ LinkTree
+│        └───┐
+│            ├ [site]       | LinkTree
+│            ├ [url]        | [LINKTREE PROFILE URL]
+│            ├ [check_type] | status
+│            ├ [expected]   | 200
+│            ├ [recieved]   | 200
+│            └
+│        ├ All my links
+│        └───┐
+│            ├ [site]       | All my links
+│            ├ [url]        | [ALLMYLINKS PROFILE URL]
+│            ├ [check_type] | status
+│            ├ [expected]   | 200
+│            ├ [recieved]   | 200
+│            └
+└
+[HH:MM:SS]    [?]    Press enter to continue :

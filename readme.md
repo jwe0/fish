@@ -5,11 +5,12 @@
 
 ## Features
 ### Host/Domain lookup
+![IP Menu](assets/ip_menu_lookup.png)   
 - Convert IP addreses to domains and domains to IPs
 - Scan common expolited ports
 - Extract banner info from hosts
 - Whois lookup
-![IP Menu](assets/ip_menu_lookup.png)   
+
 ### Username lookup
 ![Social Menu](assets/user_lookup_lookup.png)  
 - Search for usernames on over 20 popular sites

@@ -1,0 +1,40 @@
+______   __     ______     __  __       
+/\  ___\ /\ \   /\  ___\   /\ \_\ \      
+\ \  __\ \ \ \  \ \___  \  \ \  __ \     
+ \ \_\    \ \_\  \/\_____\  \ \_\ \_\    
+  \/_/     \/_/   \/_____/   \/_/\/_/
+
+[*] Lookup results
+
+├ [G] Github
+│        ├ [site]        | GitHub
+│        ├ [url]         | [GITHUB PROFILE URL]
+│        ├ [check_type]  | status
+│        ├ [expected]    | 200
+│        ├ [recieved]    | 200
+│        ├ extra
+│        └───┐
+│            ├ [fullname]     | [FULL NAME]
+│            ├ [username]     | [GITHUB USERNAME]
+│            ├ [homeLocation] | [IP / LOCATION]
+│            ├ [localTime]    | [LOCAL TIME]
+│            ├ [url]          | [PERSONAL WEBSITE URL]
+│            ├ [social]       | [SOCIAL PROFILE]
+│            └
+│
+├ [M] Minecraft
+│        ├ [site]        | Minecraft
+│        ├ [url]         | [MOJANG API URL]
+│        ├ [check_type]  | status
+│        ├ [expected]    | 200
+│        ├ [recieved]    | 200
+│        ├ extra
+│        └───┐
+│            ├ [name]        | [MINECRAFT USERNAME]
+│            ├ [uuid]        | [PLAYER UUID]
+│            ├ [timestamp]   | [PROFILE TIMESTAMP]
+│            ├ [profileId]   | [PLAYER UUID]
+│            ├ [profileName] | [MINECRAFT USERNAME]
+│            ├ [skin]        | [MINECRAFT SKIN URL]
+│            └
+└

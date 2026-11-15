@@ -1,0 +1,62 @@
+______   __     ______     __  __       
+/\  ___\ /\ \   /\  ___\   /\ \_\ \      
+\ \  __\ \ \ \  \ \___  \  \ \  __ \     
+ \ \_\    \ \_\  \/\_____\  \ \_\ \_\    
+  \/_/     \/_/   \/_____/   \/_/\/_/
+
+[*] Lookup results
+
+├ [B] Basic
+│        ├ [handed]  | [HOST TYPE]
+│        ├ [ip]      | [HOST IP RESULT]
+│        ├ [domain]  | [DOMAIN]
+│        └
+├ [I] Ip Lookup
+│        ├ [status]       | [LOOKUP STATUS]
+│        ├ [country]      | [COUNTRY]
+│        ├ [countryCode]  | [COUNTRY CODE]
+│        ├ [region]       | [REGION CODE]
+│        ├ [regionName]   | [REGION NAME]
+│        ├ [city]         | [CITY]
+│        ├ [zip]          | [POSTCODE]
+│        ├ [lat]          | [LATITUDE]
+│        ├ [lon]          | [LONGITUDE]
+│        ├ [timezone]     | [TIMEZONE]
+│        ├ [isp]          | [ISP]
+│        ├ [org]          | [ORGANISATION]
+│        ├ [as]           | [ASN / NETWORK]
+│        ├ [query]        | [HOST IP RESULT]
+│        └
+├ [P] Ports
+│        ├ 80
+│        └───┐
+│            ├ [service] | HTTP
+│            ├ [ports]   | 80
+│            ├ [combo]   | [HOST IP RESULT]:80
+│            ├ [taken]   | [RESPONSE TIME]
+│            └
+│        ├ 443
+│        └───┐
+│            ├ [service] | HTTPS
+│            ├ [ports]   | 443
+│            ├ [combo]   | [HOST IP RESULT]:443
+│            ├ [taken]   | [RESPONSE TIME]
+│            └
+│        ├ 22
+│        └───┐
+│            ├ [service] | SSH
+│            ├ [ports]   | 22
+│            ├ [combo]   | [HOST IP RESULT]:22
+│            ├ [taken]   | [RESPONSE TIME]
+│            ├ [banner]  | [SSH BANNER]
+│            └
+│        ├ 21
+│        └───┐
+│            ├ [service] | FTP
+│            ├ [ports]   | 21
+│            ├ [combo]   | [HOST IP RESULT]:21
+│            ├ [taken]   | [RESPONSE TIME]
+│            ├ [banner]  | [FTP BANNER]
+│            ├ [extra]   | [FTP LOGIN RESULT]
+│            └
+└
