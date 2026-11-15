@@ -1,5 +1,6 @@
-import socket, json
-from core.modules.general import flatten_results
+import socket, whois
+from core.modules.logging import error
+from datetime import datetime
 from core.modules.social_media.run_social_media import Online
 
 class Email:
@@ -33,11 +34,22 @@ class Email:
         except Exception as e:
             return {"message" : e}
 
-        
+    def whois_(self):
+        lookup = whois.whois(self.host)
+
+        self.report["whois"] = {
+            "registrar": lookup.registrar,
+            "creation_date": lookup.creation_date[0].strftime("%Y-%m-%d %H:%M:%S"),
+            "expiration_date": lookup.expiration_date[0].strftime("%Y-%m-%d %H:%M:%S"),
+            "updated_date" : lookup.updated_date.strftime("%Y-%m-%d %H:%M:%S") if type(lookup.updated_date) == datetime else lookup.updated_date[0].strftime("%Y-%m-%d %H:%M:%S"),
+            "name_servers": lookup.name_servers
+        }
+  
 
 
     def run(self):
         self.host_lookup()
+        self.whois_()
         user_lookup = self.online.run()
         self.report["username"] = user_lookup
         return self.report
