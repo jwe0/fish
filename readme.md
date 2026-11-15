@@ -6,9 +6,14 @@
 - Convert IP addreses to domains and domains to IPs
 - Scan common expolited ports
 - Extract banner info from hosts
+- Whois lookup
 ### Username lookup
 - Search for usernames on over 20 popular sites
 - Extract extra information from certain sites
+### Email lookup
+- Search the username in the email
+- Grab the domain info
+- Whois domain
 
 ## Instillation guides
 1. Ensure you have the latest version of python
