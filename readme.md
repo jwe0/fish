@@ -15,6 +15,24 @@
 - Grab the domain info
 - Whois domain
 
+### Extra features
+#### Social media
+- Basic github information
+- Fullname
+- Username
+- Location
+- Local time
+- URLs
+- Socials
+#### Whois
+- Registar
+- Creation, Expiration, Updated dates
+- Name servers
+- Org
+- Email
+- Country
+- State
+- City
 ## Instillation guides
 1. Ensure you have the latest version of python
 2. Install dependencies with `pip install -r requirements`
