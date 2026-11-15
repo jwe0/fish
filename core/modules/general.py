@@ -29,7 +29,8 @@ O     O           ,
     print("[>] Made with love <3")
 
 def flatten_results(results, base_indent=4):
-    clear_screen()
+    # I am fully aware how simple this should be, I am running on no sleep and it works so yk
+    os.system("clear")
     ascii_art_2 = """
  ______   __     ______     __  __       
 /\  ___\ /\ \   /\  ___\   /\ \_\ \      
@@ -47,6 +48,7 @@ def flatten_results(results, base_indent=4):
             
         elif type(info) == dict:
             double_dic = False
+            triple_dic = False
             max_key = max([len(key) for key in info])
             for key, value in info.items():
                 if type(value) != dict:
@@ -57,11 +59,25 @@ def flatten_results(results, base_indent=4):
                     result.append(f"│{" " * base_indent * 2}└───┐")
                     max_key = max([len(A) for A in value])
                     for k, v in value.items():
-                        result.append(f"│{" " * (base_indent * 3)}├ [{k}]{" " * (max_key - len(k))} | {v}")
-                    result.append(f"│{" " * base_indent * 3}└")
+                        if type(v) == dict:
+                            max_key_2 = max([len(A) for A, B in value.items()]) + 2
+                            triple_dic = True
+                            result.append(f"│{" " * base_indent * 3}└───┐")
+                            result.append(f"│{" " * (base_indent * 4)}├ {key}")
+                            result.append(f"│{" " * base_indent * 4}└───┐")
+                            for k_, v_ in v.items():
+                                result.append(f"│{" " * (base_indent * 5)}├ [{k_}]{" " * (max_key_2 - len(k_))} | {v_}")
+                        else:
+                            triple_dic = False
+                            result.append(f"│{" " * (base_indent * 3)}├ [{k}]{" " * (max_key - len(k))} | {v}")
+                    if triple_dic:
+                        result.append(f"│{" " * base_indent * 5}└")
+                    else:
+                        result.append(f"│{" " * base_indent * 3}└")
             if not double_dic:
                 result.append(f"│{" " * base_indent * 2}└")
     result.append(f"│{" " * base_indent * 2}└")
     result.pop(-1)
     result.append(f"└")
+
     print("\n".join(result))

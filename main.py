@@ -3,6 +3,7 @@ from core.modules.general import *
 
 from core.modules.networking.run_networking import Networking
 from core.modules.social_media.run_social_media import Online
+from core.modules.email.run_email import Email
 
 class Main:
     def __init__(self):
@@ -17,7 +18,13 @@ class Main:
                 "name" : "Social media",
                 "description" : "Automated social media OSINT",
                 "class" : Online,
-                "arg" : "username"
+                "arg" : "Username"
+            },
+            "email lookup" : {
+                "name" : "Email lookup",
+                "description" : "Pull basic email information",
+                "class" : Email,
+                "arg" : "Email"
             }
         }
 
