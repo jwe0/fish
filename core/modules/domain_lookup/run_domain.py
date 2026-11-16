@@ -65,6 +65,4 @@ class Domain:
 
         while self.total != self.progress:
             pass
-        print(self.report)
-        input()
         return self.report
