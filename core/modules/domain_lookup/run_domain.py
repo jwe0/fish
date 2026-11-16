@@ -10,9 +10,7 @@ class Domain:
                 "provided" : domain,
                 "host" : self.host,
                 "top_level" : self.domain_
-            },
-            "top_level" : {},
-            "sub_domain" : {}
+            }
         }
 
         self.top_level_file = "core/dependencies/top_level_domains.txt"
@@ -34,13 +32,16 @@ class Domain:
             for address in addreses:
                 addreses_sorted[address] = ""
 
+            if type_ not in self.report:
+                self.report[type_] = {}
+
             self.report[type_][hostname] = {
                 "hostname" : hostname,
                 "type" : type_,
                 "aliases" : aliases,
                 "addreses" : addreses_sorted
             }
-        except Exception as e:
+        except:
             pass
         self.progress += 1
 
