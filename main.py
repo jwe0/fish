@@ -4,6 +4,7 @@ from core.modules.general import *
 from core.modules.networking.run_networking import Networking
 from core.modules.social_media.run_social_media import Online
 from core.modules.email.run_email import Email
+from core.modules.domain_lookup.run_domain import Domain
 
 class Main:
     def __init__(self):
@@ -25,6 +26,12 @@ class Main:
                 "description" : "Pull basic email information",
                 "class" : Email,
                 "arg" : "Email"
+            },
+            "domain lookup" : {
+                "name" : "Domain lookup",
+                "description" : "Scan for hidden subdomains/domains",
+                "class" : Domain,
+                "arg" : "Domain"
             }
         }
 

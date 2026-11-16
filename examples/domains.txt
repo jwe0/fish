@@ -1,0 +1,63 @@
+______   __     ______     __  __       
+/\  ___\ /\ \   /\  ___\   /\ \_\ \      
+\ \  __\ \ \ \  \ \___  \  \ \  __ \     
+ \ \_\    \ \_\  \/\_____\  \ \_\ \_\    
+  \/_/     \/_/   \/_____/   \/_/\/_/
+
+[*] Lookup results
+
+├ [B] Basic
+│        ├ [provided]   | [DOMAIN]
+│        ├ [host]       | [HOST]
+│        ├ [top_level]  | [TOP-LEVEL DOMAIN]
+│        └
+├ [T] Top Level
+│        ├ [DOMAIN]
+│        └───┐
+│            ├ [hostname] | [DOMAIN]
+│            ├ [type]     | top_level
+│            ├ [aliases]  | []
+│            └───┐
+│                ├ [DOMAIN]
+│                └───┐
+│                    ├ [IP ADDRESS 1] | 
+│                    ├ [IP ADDRESS 2] | 
+│                    ├ [IP ADDRESS 3] | 
+│                    ├ [IP ADDRESS 4] | 
+│                    ├ [IP ADDRESS 5] | 
+│                    ├ [IP ADDRESS 6] | 
+│                    └
+├ [S] Sub Domain
+│        ├ [SUBDOMAIN 1]
+│        └───┐
+│            ├ [hostname] | [SUBDOMAIN 1]
+│            ├ [type]     | sub_domain
+│            ├ [aliases]  | []
+│            └───┐
+│                ├ [SUBDOMAIN 1]
+│                └───┐
+│                    ├ [IP ADDRESS 1] | 
+│                    ├ [IP ADDRESS 2] | 
+│                    ├ [IP ADDRESS 3] | 
+│                    ├ [IP ADDRESS 4] | 
+│                    ├ [IP ADDRESS 5] | 
+│                    ├ [IP ADDRESS 6] | 
+│                    └
+│        ├ [SUBDOMAIN 2]
+│        └───┐
+│            ├ [hostname] | [SUBDOMAIN 2]
+│            ├ [type]     | sub_domain
+│            ├ [aliases]  | []
+│            └───┐
+│                ├ [SUBDOMAIN 2]
+│                └───┐
+│                    ├ [IP ADDRESS 1] | 
+│                    ├ [IP ADDRESS 2] | 
+│                    ├ [IP ADDRESS 3] | 
+│                    ├ [IP ADDRESS 4] | 
+│                    ├ [IP ADDRESS 5] | 
+│                    ├ [IP ADDRESS 6] | 
+│                    ├ [IP ADDRESS 7] | 
+│                    ├ [IP ADDRESS 8] | 
+│                    └
+└

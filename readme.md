@@ -20,6 +20,12 @@
 - Search the username in the email
 - Grab the domain info
 - Whois domain
+### Domain lookup
+![Domain menu](assets/domain_lookup_menu.png)
+- Scan for top level domains
+- Scan for subdomains
+- Pull aliases and associated addresess
+
 
 ### Extra features
 #### Social media
