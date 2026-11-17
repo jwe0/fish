@@ -14,7 +14,12 @@ class Networking:
             "21" : ftp_attack
         }
 
-        self.domain_host_check()
+    def is_valid(self):
+        try:
+            socket.gethostbyname(self.host)
+            return True
+        except:
+            return False
 
     def domain_host_check(self):
         info("Determining host type")
@@ -60,8 +65,14 @@ class Networking:
             },
         }
 
+    def init_values(self):
+        self.domain_host_check()
+
 
     def run(self):
+        if "." not in self.host or not self.is_valid():
+            return {"error" : "IP/Domain appears to be offline or invalid?"}
+        self.init_values()
         print()
         info("Looking up IP...")
         self.ip_lookup()

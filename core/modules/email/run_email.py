@@ -8,16 +8,6 @@ class Email:
         self.email   = email
         self.report  = {}
 
-        self.username = self.email.split("@")[0]
-        self.host     = self.email.split("@")[1]
-
-        self.report["basic"] = {
-            "username" : self.username,
-            "host" : self.host
-        }
-
-        self.online = Online(self.username)
-
     def host_lookup(self):
         try:
             info = socket.gethostbyname_ex(self.host)
@@ -56,10 +46,22 @@ class Email:
             },
 
         }
-  
+    def init_values(self):
+        self.username = self.email.split("@")[0]
+        self.host     = self.email.split("@")[1]
+
+        self.report["basic"] = {
+            "username" : self.username,
+            "host" : self.host
+        }
+
+        self.online = Online(self.username)
 
 
     def run(self):
+        if "@" not in self.email or "." not in self.email:
+            return {"error" : "Please provide a valid email format"}
+        self.init_values()
         self.host_lookup()
         self.whois_()
         user_lookup = self.online.run()
