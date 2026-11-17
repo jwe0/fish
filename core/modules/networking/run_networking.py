@@ -1,6 +1,7 @@
 import socket, whois, tls_client
 from core.modules.networking.port_scan import scan
 from core.modules.networking.attacks import ftp_attack
+from core.modules.networking.check_vpn import vpn
 from core.modules.logging import *
 
 class Networking:
@@ -80,6 +81,14 @@ class Networking:
 
         print()
 
+        info("Scanning public VPN records...")
+        response = vpn(self.report["basic"]["ip"])
+        if response:
+            self.report["vpn_check"] = response
+        success("Scanned public vpn records!")
+
+        print()
+
         info("Searching whois records...")
         self.whois_()
         success("Whois records recovered!")
@@ -92,7 +101,7 @@ class Networking:
 
         print()
 
-        if self.report["ports"]:
+        if self.report.get("ports"):
             info("Probing open ports...")
             for port in self.report["ports"]:
                 if port in self.port_attacks:
