@@ -63,5 +63,6 @@ class Email:
         self.host_lookup()
         self.whois_()
         user_lookup = self.online.run()
-        self.report["username"] = user_lookup
+        if user_lookup:
+            self.report["username"] = user_lookup
         return self.report
