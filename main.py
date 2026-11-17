@@ -5,6 +5,7 @@ from core.modules.networking.run_networking import Networking
 from core.modules.social_media.run_social_media import Online
 from core.modules.email.run_email import Email
 from core.modules.domain_lookup.run_domain import Domain
+from core.modules.page_fuzzer.run_fuzzer import Fuzzer
 
 class Main:
     def __init__(self):
@@ -32,6 +33,12 @@ class Main:
                 "description" : "Scan for hidden subdomains/domains",
                 "class" : Domain,
                 "arg" : "Domain"
+            },
+            "page fuzzer" : {
+                "name" : "Page fuzzer",
+                "description" : "Please include the protocol and page eg. [ https://test.com/%q, | http://example.com/test/%q ])",
+                "class" : Fuzzer,
+                "arg" : "url"
             }
         }
 
@@ -98,7 +105,11 @@ class Main:
             module_class = module_info["class"](module_arg)
             results      = module_class.run()
 
-            flatten_results(results)
+            if not results.get("error"):
+
+                flatten_results(results)
+            else:
+                error(results.get("error"))
 
             inpt("Press enter to continue")
 

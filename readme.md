@@ -25,7 +25,11 @@
 - Scan for top level domains
 - Scan for subdomains
 - Pull aliases and associated addresess
-
+### Directory fuzzer
+![Fuzzer menu](assets/fuzzer_menu.png)
+- Threaded lookups for optimized results
+- Pull the status code of the response (only blocks 404 by default)
+- Grab the page title
 
 ### Extra features
 #### Social media
