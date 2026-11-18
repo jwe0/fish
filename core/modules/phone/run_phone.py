@@ -36,9 +36,11 @@ class Phone:
                         self.report["carrier"][key] = value
 
     def country_code_info(self):
-        number = self.number.removeprefix("")
+        number = self.number
+        number = self.number.removeprefix("+")
         code_info = json.load(open(self.country_code_file))
         for i in range(3, 0, -1):
+            print(number[:i])
             info = code_info.get(number[:i])
             if info:
                 self.report["code info"] = info
@@ -56,6 +58,5 @@ class Phone:
         info("Searching country code...")
         self.country_code_info()
         success("Completed country code lookup!")
-
         input()
         return self.report
