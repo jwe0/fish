@@ -3,7 +3,7 @@ from core.modules.logging import *
 
 class Domain:
     def __init__(self, domain):
-        self.domain = domain
+        self.domain = domain[0]
         self.host, self.domain_   = self.domain.split(".")
         self.report = {
             "basic"   : {

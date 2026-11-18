@@ -30,6 +30,11 @@
 - Threaded lookups for optimized results
 - Pull the status code of the response (only blocks 404 by default)
 - Grab the page title
+### Phone lookup
+![Phone menu](assets/phone_menu.png)
+- Find the carrier of a number
+- Grab country code information
+- Find extra carrier info
 
 ### Extra features
 #### Social media

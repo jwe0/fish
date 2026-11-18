@@ -6,6 +6,7 @@ from core.modules.social_media.run_social_media import Online
 from core.modules.email.run_email import Email
 from core.modules.domain_lookup.run_domain import Domain
 from core.modules.page_fuzzer.run_fuzzer import Fuzzer
+from core.modules.phone.run_phone import Phone
 
 class Main:
     def __init__(self):
@@ -14,31 +15,49 @@ class Main:
                 "name" : "Networking",
                 "description" : "Automated lookup for domains/IP hosts",
                 "class" : Networking,
-                "arg" : "Host"
+                "args" : {
+                    "host" : True
+                }
             },
             "social media" : {
                 "name" : "Social media",
                 "description" : "Automated social media OSINT",
                 "class" : Online,
-                "arg" : "Username"
+                "args" : {
+                    "username" : True
+                }
             },
             "email lookup" : {
                 "name" : "Email lookup",
                 "description" : "Pull basic email information",
                 "class" : Email,
-                "arg" : "Email"
+                "args" : {
+                    "email" : True
+                }
             },
             "domain lookup" : {
                 "name" : "Domain lookup",
                 "description" : "Scan for hidden subdomains/domains",
                 "class" : Domain,
-                "arg" : "Domain"
+                "args" : {
+                    "domain" : True
+                }
             },
             "page fuzzer" : {
                 "name" : "Page fuzzer",
-                "description" : "Please include the protocol and page eg. [ https://test.com/%q, | http://example.com/test/%q ])",
+                "description" : "Website page fuzzer",
                 "class" : Fuzzer,
-                "arg" : "url"
+                "args" : {
+                    "url" : True
+                }
+            },
+            "phone lookup" : {
+                "name" : "Phone lookup",
+                "description" : "Pull public mobile phone info",
+                "class" : Phone,
+                "args" : {
+                    "number" : True
+                }
             }
         }
 
@@ -72,7 +91,7 @@ class Main:
         name = module_info["name"]
         desc = module_info["description"]
         clas = module_info["class"]
-        arg_ = module_info["arg"]
+        arg_ = module_info["args"]
 
         return {
             "name" : name,
@@ -81,15 +100,17 @@ class Main:
             "arg"   : arg_
         }
 
-    def get_module_arg(self, arg, description):
-        # print()
+    def get_module_arg(self, args, description):
+        args_report = []
         info(description)
-        user_choice = inpt(arg)
-
-        while not user_choice:
-            error("Please enter a value")
-            user_choice = inpt("Press enter to continue")
-        return user_choice
+        for arg in args:
+            user_choice = inpt(arg)
+            if args.get(arg):
+                while not user_choice:
+                    error("Please enter a value")
+                    user_choice = inpt("Press enter to continue")
+            args_report.append(user_choice)
+        return args_report
 
     def main(self):
         while True:

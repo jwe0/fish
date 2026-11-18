@@ -6,7 +6,7 @@ from core.modules.email.lookups.proton import proton_lookup
 
 class Email:
     def __init__(self, email):
-        self.email   = email
+        self.email   = email[0]
         self.report  = {}
 
         self.extra_attacks = {
@@ -63,8 +63,7 @@ class Email:
             "username" : self.username,
             "host" : self.host
         }
-
-        self.online = Online(self.username)
+        self.online = Online([self.username])
 
     def extra_domain_scan(self):
         for extra in self.extra_attacks:

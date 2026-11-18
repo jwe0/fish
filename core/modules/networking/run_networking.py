@@ -6,7 +6,7 @@ from core.modules.logging import *
 
 class Networking:
     def __init__(self, host):
-        self.host   = host
+        self.host   = host[0]
         self.report = {}
 
         self.session = tls_client.Session()
@@ -71,8 +71,8 @@ class Networking:
 
 
     def run(self):
-        if "." not in self.host or not self.is_valid():
-            return {"error" : "IP/Domain appears to be offline or invalid?"}
+        if not self.is_valid():
+            return {"error" : "IP/host destination is unreachable"}
         self.init_values()
         print()
         info("Looking up IP...")

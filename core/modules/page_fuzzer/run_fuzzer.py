@@ -4,7 +4,7 @@ from core.modules.logging import info, error
 
 class Fuzzer:
     def __init__(self, url):
-        self.url = url
+        self.url = url[0]
         self.report = {}
 
         self.report["basic"] = {"url" : self.url}

@@ -5,7 +5,7 @@ from core.modules.social_media.extra_attacks.minecraft import minecraft
 
 class Online:
     def __init__(self, username):
-        self.username = username
+        self.username = username[0]
         self.hits = {}
         self.errors = {}
         self.link_file = "core/dependencies/sites.json"
